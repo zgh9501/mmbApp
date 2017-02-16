@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>慢慢买平台-优惠卷</title>
+    <link rel="shortcut icon" type="favicon.ico" href="favicon.ico">
+    <!-- 先引入第三方的框架 -->
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet/less" href="css/base.less">
+    <link rel="stylesheet/less" href="css/coupon.less">
+    <script src="lib/less/less.js"></script>
+</head>
+
+<body>
+    <a href="#header" class="fixed">
+        <i class="glyphicon glyphicon-menu-up"></i>
+        <span>置顶</span>
+    </a>
+    <header id="header">
+        <a href="index.html" class="glyphicon glyphicon-menu-left"></a>
+        <h3>优惠券</h3>
+        <a href="http://a.app.qq.com/o/simple.jsp?pkgname=com.manmanbuy.bijia" class="downLoad">
+            <span class="glyphicon glyphicon-download-alt"></span>
+            <span>APP下载</span>
+        </a>
+    </header>
+    <main class="coupon-title">
+    </main>
+    <!-- 加载中的效果 -->
+    <div class="loading">
+        <div class="load-container load4">
+            <div class="loader"></div>
+        </div>
+    </div>
+    <footer id="footer">
+        <div class="row">
+            <div class="col-xs-4">
+                <a href="#">登录</a>
+            </div>
+            <div class="col-xs-4">
+                <a href="#">注册</a>
+            </div>
+            <div class="col-xs-4">
+                <a href="#header">
+                    <i class="glyphicon glyphicon-arrow-up"></i>返回顶部
+                </a>
+            </div>
+        </div>
+        <p> <a href="#">手机APP下载</a> <a href="#">慢慢买手机版</a> -- 掌上比价平台</p>
+        <p>m.manmanbuy.com </p>
+    </footer>
+    <script id="couponTitle" type="text/html">
+        <ul class="clearfix">
+            {{each result as value i}}
+            <li style="width: 118.333px;">
+                <a href="{{value.couponLink}}?couponid={{value.couponId}}"><img src="{{value.couponImg}}" alt="">
+                    <br>{{value.couponTitle}}</a>
+            </li>
+            {{/each}}
+        </ul>
+    </script>
+    <!-- 先引入jquery  Bootstrap依赖jquery-->
+    <script src="lib/jquery/jquery.js" id="couponTitle"></script>
+    <!-- 后引入Bootstrap的js文件 -->
+    <script src="lib/bootstrap/js/bootstrap.js"></script>
+    <script src="js/template.js"></script>
+    <!-- 最后引入自己的js文件 -->
+    <script src="js/coupon.js"></script>
+    <script>
+    (function($) {
+        $.getUrlParam = function(name) {
+            var reg = new RegExp("(^|&)" +
+                name + "=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) return unescape(r[2]);
+            return null;
+        }
+    })(jQuery);
+    </script>
+</body>
+
+</html>

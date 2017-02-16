@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>产品分类-慢慢买平台</title>
+    <link rel="shortcut icon" type="favicon.ico" href="favicon.ico">
+    <!-- 先引入第三方的框架 -->
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+    <!-- 再引入自己的less -->
+    <link rel="stylesheet/less" href="css/base.less">
+    <link rel="stylesheet/less" href="css/category.less">
+    <!-- 编译less文件的js -->
+    <script src="lib/less/less.js"></script>
+</head>
+
+<body>
+    <a href="#header" class="fixed">
+        <i class="glyphicon glyphicon-menu-up"></i>
+        <span>置顶</span>
+    </a>
+    <!-- 头部区域 -->
+    <header id="header">
+        <a href="#" class="logo"><img src="images/header_logo.png" alt=""></a>
+        <a href="http://a.app.qq.com/o/simple.jsp?pkgname=com.manmanbuy.bijia" class="downLoad">
+            <span class="glyphicon glyphicon-download-alt"></span>
+            <span>APP下载</span>
+        </a>
+    </header>
+    <!-- 搜索区域 -->
+    <section id="search">
+        <!-- 在两个input外面套一个form表单 一是 语义角度 二是布局的角度 -->
+        <form action="#">
+            <!-- type=search 当点击搜索框的时候输入法右下角 变成搜索 -->
+            <input type="search" name="" id="" placeholder="请输入要比价的商品">
+            <input type="submit" value="搜索">
+        </form>
+    </section>
+    <!-- 分类区域 -->
+    <section id="category">
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+        </div>
+    </section>
+    <!-- 底部区域 -->
+    <footer id="footer">
+        <div class="row">
+            <div class="col-xs-4">
+                <a href="#">登录</a>
+            </div>
+            <div class="col-xs-4">
+                <a href="#">注册</a>
+            </div>
+            <div class="col-xs-4">
+                <a href="#header">
+                    <i class="glyphicon glyphicon-arrow-up"></i> 返回顶部
+                </a>
+            </div>
+        </div>
+        <p> <a href="#">手机APP下载</a> <a href="#">慢慢买手机版</a> -- 掌上比价平台</p>
+        <p>m.manmanbuy.com </p>
+    </footer>
+    <!-- 分类标题模板 -->
+    <script type="text/html" id="categoryTitleTmp">
+        {{each result as value i}}
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingOne">
+                <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse{{i}}" aria-expanded="true" aria-controls="collapseOne" data-titleId="{{value.titleId}}">
+                        {{value.title}}                        
+                        </a>
+                    </h4>
+            </div>
+            <div id="collapse{{i}}" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                <div class="panel-body">
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </script>
+    <!-- 分类列表模板  -->
+    <!-- category是参数名 = {{value.category}} 是参数的值  category=电视 -->
+    <!-- productlist.html?category={{value.category}} -->
+    <script type='text/html' id="categoryTmp">
+        <div class="row">
+            {{each result as value i}}
+            <div class="col-xs-4"><a href="productlist.html?categoryid={{value.categoryId}}&category={{value.category}}&pageid=1">{{value.category}}</a></div>
+            {{/each}}
+        </div>
+    </script>
+    <!-- 先引入jquery  Bootstrap依赖jquery-->
+    <script src="lib/jquery/jquery.js"></script>
+    <!-- 后引入Bootstrap的js文件 -->
+    <script src="lib/bootstrap/js/bootstrap.js"></script>
+    <script src="js/template.js"></script>
+    <!-- 最后引入自己的js文件 -->
+    <script src="js/category.js"></script>
+</body>
+
+</html>

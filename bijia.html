@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>慢慢买平台-商品详情</title>
+    <link rel="shortcut icon" type="favicon.ico" href="favicon.ico">
+    <!-- 先引入第三方的框架 -->
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+    <!-- 再引入自己的less -->
+    <link rel="stylesheet/less" href="css/base.less">
+    <link rel="stylesheet/less" href="css/bijia.less">
+    <!-- 编译less文件的js -->
+    <script src="lib/less/less.js"></script>
+</head>
+
+<body>
+    <a href="#header" class="fixed">
+        <i class="glyphicon glyphicon-menu-up"></i>
+        <span>置顶</span>
+    </a>
+    <!-- 头部区域 -->
+    <header id="header">
+        <a href="#" class="logo"><img src="images/header_logo.png" alt=""></a>
+        <a href="http://a.app.qq.com/o/simple.jsp?pkgname=com.manmanbuy.bijia" class="downLoad">
+            <span class="glyphicon glyphicon-download-alt"></span>
+            <span>APP下载</span>
+        </a>
+    </header>
+    <!-- 搜索区域 -->
+    <section id="search">
+        <!-- 在两个input外面套一个form表单 一是 语义角度 二是布局的角度 -->
+        <form action="#">
+            <!-- type=search 当点击搜索框的时候输入法右下角 变成搜索 -->
+            <input type="search" name="" id="" placeholder="请输入要比价的商品">
+            <input type="submit" value="搜索">
+        </form>
+    </section>
+    <!-- 商品详情 -->
+    <section id="product">
+        <!-- 分类标题区域 -->
+        <div class="category-title">
+            <ol class="breadcrumb">
+                <li><a href="#">首页</a></li>
+                <li><a href="productlist.html">全部分类</a></li>
+                <li>空调</li>
+            </ol>
+            <a href="#" class="btn btn-default">筛选</a>
+        </div>
+        <div class="product-info">
+        </div>
+        <!-- 加载中的效果 -->
+        <div class="loading">
+            <div class="load-container load4">
+                <div class="loader"></div>
+            </div>
+        </div>
+    </section>
+    <!-- 底部区域 -->
+    <footer id="footer">
+        <div class="row">
+            <div class="col-xs-4">
+                <a href="#">登录</a>
+            </div>
+            <div class="col-xs-4">
+                <a href="#">注册</a>
+            </div>
+            <div class="col-xs-4">
+                <a href="#header">
+                    <i class="glyphicon glyphicon-arrow-up"></i> 返回顶部
+                </a>
+            </div>
+        </div>
+        <p> <a href="#">手机APP下载</a> <a href="#">慢慢买手机版</a> -- 掌上比价平台</p>
+        <p>m.manmanbuy.com </p>
+    </footer>
+    <!-- 商品详情模板 -->
+    <script type="text/html" id="productInfoTmp">
+        {{each result as value i}}
+        <div class="product-bijia">
+            <div class="product-name">
+                {{value.productName}}
+            </div>
+            <div class="product-img">
+                {{#value.productImg}}
+            </div>
+            <div class="product-collect">
+                <a href="javascript:setfav(473088);">
+                    <img src="http://www.zuyushop.com/wap/images/sc.jpg" width="39" height="39"></a>
+            </div>
+        </div>
+        <div class="tab">
+            <ul>
+                <li class="cur col-xs-4"><a href="#">比价购买</a></li>
+                <li class="mtab col-xs-4">
+                    <a href="#">产品参数</a></li>
+                <li class="col-xs-4"><a href="#" class="">评价(2322)</a></li>
+            </ul>
+        </div>
+        <div class="plist">
+            <a href="redirect.aspx?webid=1&amp;bjid=76069915&amp;tourl=http://item.jd.com/1162187.html&amp;y=bijia" target="_blank" onclick="trackLog('商品购买','比价页面');">
+                  {{#value.bjShop}}
+                </a>
+            <div class="note">
+                * 实际价格以各网站列出的实时售价为准，我们提供的价格可能有数小时至数日的延迟。
+            </div>
+        </div>
+        <div class="product-com-title">
+            <div>网友评价</div>
+        </div>
+        <div class="product-com-list">
+        </div>
+        {{/each}}
+    </script>
+    <script type="text/html" id="productComTmp">
+        <ul>
+            {{each result as value i}}
+            <li>
+                <div class="clearfix"> <span class="pull-left com-name">{{value.comName}}             </span>
+                    <span class="pull-right com-time">{{value.comTime}}               </span></div>
+                <div class="clearfix"> <span class="star pull-left com-star"><em class="star5"></em></span> <span class="pull-right com-from">                   {{value.comFrom}}                </span></div>
+                <div class="com-content">{{value.comContent}}</div>
+            </li>
+            {{/each}}
+        </ul>
+        <div class="more">
+            <a class="morein" href="comment.aspx?id=473088">查看更多评价</a>
+        </div>
+    </script>
+    <!-- 先引入jquery  Bootstrap依赖jquery-->
+    <script src="lib/jquery/jquery.js"></script>
+    <!-- 后引入Bootstrap的js文件 -->
+    <script src="lib/bootstrap/js/bootstrap.js"></script>
+    <script src="js/template.js"></script>
+    <!-- 最后引入自己的js文件 -->
+    <script src="js/bijia.js"></script>
+</body>
+
+</html>

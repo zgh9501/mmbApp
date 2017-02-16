@@ -1,0 +1,220 @@
+   @media only screen and (max-width: 1080px), only screen and (max-device-width:1080px) {
+     html,body {
+         font-size:168.75px;
+     }
+   }
+     @media only screen and (max-width: 960px), only screen and (max-device-width:960px) {
+     html,body {
+         font-size:150px;
+     }
+   }
+     @media only screen and (max-width: 800px), only screen and (max-device-width:800px) {
+     html,body {
+         font-size:125px;
+     }
+   }   
+     @media only screen and (max-width: 720px), only screen and (max-device-width:720px) {
+     html,body {
+         font-size:112.5px;
+     }
+   }
+     @media only screen and (max-width: 640px), only screen and (max-device-width:640px) {
+     html,body {
+         font-size:100px;
+     }
+   }
+     @media only screen and (max-width: 600px), only screen and (max-device-width:600px) {
+     html,body {
+         font-size:93.75px;
+     }
+   }
+     @media only screen and (max-width: 540px), only screen and (max-device-width:540px) {
+     html,body {
+         font-size:84.375px;
+     }
+   }
+     @media only screen and (max-width: 480px), only screen and (max-device-width:480px) {
+     html,body {
+         font-size:75px;
+     }
+   }
+     @media only screen and (max-width: 414px), only screen and (max-device-width:414px) {
+     html,body {
+         font-size:64.6875px;
+     }
+   }
+     @media only screen and (max-width: 400px), only screen and (max-device-width:400px) {
+     html,body {
+         font-size:62.5px;
+     }
+   }
+     @media only screen and (max-width: 375px), only screen and (max-device-width:375px) {
+     html,body {
+         font-size:58.59375px;
+     }
+   }
+     @media only screen and (max-width: 360px), only screen and (max-device-width:360px) {
+     html,body {
+         font-size:56.25px;
+     }
+   }
+     @media only screen and (max-width: 320px), only screen and (max-device-width:320px) {
+     html,body {
+         font-size:50px;
+     }
+   }
+     @media only screen and (max-width: 240px), only screen and (max-device-width:240px) {
+     html,body {
+         font-size:37.5px;
+     }
+   }
+  body {
+    background-color: #f5f5f5;
+    font-size: 16px;
+}
+
+/* // 头部区域
+#header {
+    height: 0.5rem;
+    background-color: #ff841d;
+    padding: 0.1rem;
+    >.logo {
+        margin-left: 0.05rem;
+        >img {
+            height: 0.25rem;
+        }
+    }
+    >.app {
+        float: right;
+        margin-top: -0.02rem;
+        >img {
+            height: 0.34rem;
+        }
+    }
+} */
+
+// 搜索区域
+#search {
+    background-color: #fff;
+    padding: 0.1rem;
+    >form {
+        padding-right: 0.7rem;
+        position: relative;
+        >input[type="search"] {
+            width: 100%;
+            height: 0.3rem;
+            border-radius: 15px;
+            border: 0;
+            background-color: #f5f5f5;
+            padding-left: 15px;
+        }
+        >input[type="submit"] {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 0.65rem;
+            height: 0.40rem;
+            border-radius: 15px;
+            background-color: #ff841d;
+            color: #fff;
+            border: 0;
+        }
+    }
+}
+
+// 导航菜单
+#menu {
+    padding: 0.1rem;
+    margin-top: 0.1rem;
+    background-color: #fff;
+    >.row {
+        >div {
+            >a {
+                text-align: center;
+                display: block;
+                margin-top: 0.1rem;
+                >img {
+                    width: 0.5rem;
+                    height: 0.5rem;
+                }
+                >p {
+                    font-size: 0.12rem;
+                    margin: 0.05rem 0;
+                }
+            }
+        }
+        // -0+4 == 4 -1+4 3 -2+4 == 2 -3+4  == 1 -4 + 4 == 0
+        >div:nth-last-child(-n+4) {
+            display: none;
+        }
+    }
+}
+
+// 折扣商品
+#recommen {
+    background-color: #fff;
+    >.recommen-title {
+        background-color: #ff9000;
+        position: relative;
+        >h5 {
+            height: 0.35rem;
+            line-height: 0.35rem;
+            font-size: 0.16rem;
+            color: #fff;
+            padding-left: 0.2rem;
+        }
+    }
+    >.recommen-list {
+        >.media {
+            border-bottom: 1px solid #ccc;
+            padding: 0.1rem;
+            >.media-left {
+                >img {
+                    width: 1rem;
+                    height: 1rem;
+                }
+            }
+            >.media-body {
+                >h5 {}
+                >.price {
+                    color: #e92322;
+                }
+                >.from {
+                    float: left;
+                    color: #666;
+                    font-size: 0.12rem;
+                }
+                >.comment {
+                    float: right;
+                    margin-right: 0.1rem;
+                    color: #666;
+                    font-size: 0.12rem;
+                    >.icon-comment {
+                        background-image: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 1024' width='17'><path fill='#a1a1a1' d='M924.504962 664.898711 97.819886 664.898711c-17.557888 0-31.795147-14.241352-31.795147-31.795147l0-508.732583c0-17.557888 14.238282-31.792077 31.795147-31.792077l241.198387 0 149.664671-149.661601c6.209422-6.212492 14.34266-9.31618 22.478967-9.31618s16.269545 3.102664 22.479991 9.31618L683.306574 92.57788l241.198387 0c17.557888 0 31.795147 14.235213 31.795147 31.792077L956.300109 633.10254C956.300109 650.657358 942.061826 664.898711 924.504962 664.898711zM892.708791 156.169197l-222.569098 0c-8.428973 0-16.518209-3.354398-22.478967-9.31618l-136.498814-136.494721-136.498814 136.494721c-5.961782 5.961782-14.051017 9.31618-22.479991 9.31618l-222.569098 0L129.61401 601.304324l763.093758 0L892.707768 156.169197zM288.592814 378.735226m-63.591317 0a62.143 62.143 0 1 0 127.182634 0 62.143 62.143 0 1 0-127.182634 0ZM511.161912 378.735226m-63.591317 0a62.143 62.143 0 1 0 127.182634 0 62.143 62.143 0 1 0-127.182634 0ZM733.73101 378.735226m-63.591317 0a62.143 62.143 0 1 0 127.182634 0 62.143 62.143 0 1 0-127.182634 0Z' transform='translate(0, 812) scale(1, -1)'/></svg>");
+                        width: 0.14rem;
+                        height: 0.15rem;
+                        display: inline-block;
+                        background-size: auto 100%;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        vertical-align: middle;
+                        margin-right: 0.04rem;
+                    }
+                }
+            }
+        }
+    }
+    >.recommen-more {
+        padding: 0.1rem;
+        >a {
+            width: 100%;
+            border: 1px solid #ccc;
+            display: block;
+            height: 0.32rem;
+            line-height: 0.32rem;
+            text-align: center;
+            border-radius: 5px;
+            font-size:13px;
+        }
+    }
+}

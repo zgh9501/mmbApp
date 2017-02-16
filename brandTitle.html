@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>慢慢买平台-品牌大全</title>
+    <link rel="shortcut icon" type="favicon.ico" href="favicon.ico">
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet/less" href="css/base.less">
+    <link rel="stylesheet/less" href="css/category.less">
+    <script src="js/less.js"></script>
+</head>
+
+<body>
+    <a href="#header" class="fixed">
+        <i class="glyphicon glyphicon-menu-up"></i>
+        <span>置顶</span>
+    </a>
+    <!-- 头部区域 -->
+    <header id="header">
+        <a href="#" class="logo"><img src="images/header_logo.png" alt=""></a>
+        <a href="http://a.app.qq.com/o/simple.jsp?pkgname=com.manmanbuy.bijia" class="downLoad">
+            <span class="glyphicon glyphicon-download-alt"></span>
+            <span>APP下载</span>
+        </a>
+    </header>
+    <!-- 搜索区域 -->
+    <section id="search">
+        <!-- 在两个input外面套一个form表单 一是 语义角度 二是布局的角度 -->
+        <form action="#">
+            <!-- type=search 当点击搜索框的时候输入法右下角 变成搜索 -->
+            <input type="search" name="" id="" placeholder="请输入要比价的商品">
+            <input type="submit" value="搜索">
+        </form>
+    </section>
+    <section id="category">
+        <!-- 分类标题区域 -->
+        <div class="category-title">
+            <ol class="breadcrumb">
+                <li><a href="index.html">首页</a></li>
+                <li><a>全部分类</a></li>
+            </ol>
+        </div>
+        <div style="font-size: 16px;color:#874604;height: 40px; padding-left:10px; line-height: 40px;margin:10px 5px; border:1px solid #ccc; background-color:#eee;">热门品牌排行</div>
+        <div class="row clearfix brand-title">
+            >
+        </div>
+        <!-- 加载中的效果 -->
+        <div class="loading">
+            <div class="load-container load4">
+                <div class="loader"></div>
+            </div>
+        </div>
+    </section>
+    <!-- 底部区域 -->
+    <footer id="footer">
+        <div class="row">
+            <div class="col-xs-4">
+                <a href="#">登录</a>
+            </div>
+            <div class="col-xs-4">
+                <a href="#">注册</a>
+            </div>
+            <div class="col-xs-4">
+                <a href="#header">
+                    <i class="glyphicon glyphicon-arrow-up"></i> 返回顶部
+                </a>
+            </div>
+        </div>
+        <p> <a href="#">手机APP下载</a> <a href="#">慢慢买手机版</a> -- 掌上比价平台</p>
+        <p>m.manmanbuy.com </p>
+    </footer>
+    <script type="text/html" id="brandTitleTmp">
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+            {{each result as value i}}
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                    <h4 class="panel-title">
+                             <!-- data-toggle="collapse" 是功能组件的开关 有这个属性表示开启 没有表示关闭 -->
+                            <a data-parent="#accordion" href="brand.html?brandtitleid={{value.brandTitleId}}" aria-expanded="true" aria-controls="collapseOne" data-brandtitleid="{{value.brandTitleId}}">
+                            {{value.brandTitle}}                       
+                            </a>
+                        </h4>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </script>
+    <script src="lib/jquery/jquery.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.js"></script>
+    <script src="js/template.js"></script>
+    <script src="js/brandtitle.js"></script>
+</body>
+
+</html>

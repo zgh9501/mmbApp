@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>慢慢买平台-商品折扣详情</title>
+    <link rel="shortcut icon" type="favicon.ico" href="favicon.ico">
+    <!-- 先引入第三方的框架 -->
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet/less" href="css/base.less">
+    <link rel="stylesheet/less" href="css/inlanddiscount.less">
+    <link rel="stylesheet/less" href="css/discount.less">
+    <script src="lib/less/less.js"></script>
+</head>
+
+<body>
+    <a href="#header" class="fixed">
+        <i class="glyphicon glyphicon-menu-up"></i>
+        <span>置顶</span>
+    </a>
+    <header id="header">
+        <a href="inlanddiscount.html" class="glyphicon glyphicon-menu-left"></a>
+        <h3>国内折扣</h3>
+        <a href="http://a.app.qq.com/o/simple.jsp?pkgname=com.manmanbuy.bijia" class="downLoad">
+            <span class="glyphicon glyphicon-download-alt"></span>
+            <span>APP下载</span>
+        </a>
+    </header>
+    <main id="recommen-product" class="discount-product">
+    </main>
+    <!-- 加载中的效果 -->
+    <div class="loading">
+        <div class="load-container load4">
+            <div class="loader"></div>
+        </div>
+    </div>
+    <footer id="footer">
+        <div class="row">
+            <div class="col-xs-4">
+                <a href="#">登录</a>
+            </div>
+            <div class="col-xs-4">
+                <a href="#">注册</a>
+            </div>
+            <div class="col-xs-4">
+                <a href="#header">
+                    <i class="glyphicon glyphicon-arrow-up"></i>返回顶部
+                </a>
+            </div>
+        </div>
+        <p> <a href="#">手机APP下载</a> <a href="#">慢慢买手机版</a> -- 掌上比价平台</p>
+        <p>m.manmanbuy.com </p>
+    </footer>
+    <!-- 模板区域 -->
+    <script id="discountProduct" type="text/html">
+        {{each result as value i}}
+        <div class="container">
+            <div class="cu-content">
+                <h3 class="title">
+                {{value.productName}}</h3>
+                <h4>{{value.productPrice}}</h4>
+                <div class="info">
+                    <span class="mall">{{value.productFrom}}</span> <span class="addtime" style="margin-right: 4px;">{{value.productTime}}</span>
+                    <span class="author">{{value.productTips}}</span>
+                </div>
+                <div class="content clearfix">
+                    <!-- div class="picwrap">
+                        <img src="http://cacheimg.manmanbuy.com/r_img/cacheimg.aspx?width=600&amp;imgurl=j_sources/img/2016/10/24/190_190_0_36618798b6e1a98d9f4ae8f7a195f41b.jpg" alt="新低价：MTG Style 系列 中性 Body Make Seat Style 脊椎护腰坐垫"></div> -->
+                    <div class="conn">
+                        <!--内容开始-->
+                        <p>{{#value.productImg}}</p>
+                        <p>{{value.productInfo}}</p>
+                        <!--内容结束-->
+                    </div>
+                </div>
+                <div class="golink">
+                    <a href="redirect.aspx?tjid=521575&amp;y=cu_share" target="_blank"><i class="icon-gobuy"></i>前往购买</a></div>
+            </div>
+            <div style="text-align: center; margin: 20px 10px;">
+                <img src="images/mmbweixin2.png" style="width: 100%; height: auto;">
+            </div>
+            <div class="cu-content-pl ui-border-t">
+                {{#value.productComment}}
+            </div>
+        </div>
+        {{/each}}
+    </script>
+    <!-- 先引入jquery  Bootstrap依赖jquery-->
+    <script src="lib/jquery/jquery.js"></script>
+    <!-- 后引入Bootstrap的js文件 -->
+    <script src="lib/bootstrap/js/bootstrap.js"></script>
+    <script src="js/template.js"></script>
+    <!-- 最后引入自己的js文件 -->
+    <script src="js/discount.js"></script>
+</body>
+
+</html>

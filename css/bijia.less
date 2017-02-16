@@ -1,0 +1,93 @@
+.product-info {
+    > .product-bijia {
+        position: relative;
+        >.product-name {
+            text-align: center;
+            font-size: 17px;
+            width: 90%;
+            margin: 0 auto;
+            margin-top: 16px;
+        }
+        >.product-img {
+            display: block;
+            width: 170px;
+            height: 170px;
+            margin: 0px auto;
+        }
+        >.product-collect {
+            float: right;
+            margin-right: 24px;
+            position: absolute;
+            right: 0px;
+            bottom: 0px;
+        }
+    }
+    > .product-com-title {
+        border-top: 4px solid #7a7a7a;
+        margin-top: 5px;
+        >div {
+            height: 34px;
+            line-height: 34px;
+            text-align: center;
+            overflow: hidden;
+            background: #dbdbdb;
+            font-size: 14px;
+            border-top: 1px solid #fff;
+        }
+    }
+    >.product-com-list {
+        > ul {
+            >li {
+                font-size: 12px;
+                color: #666;
+                padding: 10px;
+                padding-bottom: 0px;
+                line-height: 18px;
+                margin-top: 3px;
+                border-bottom: 1px solid #ccc;
+            }
+        }
+        >.more {
+            padding: 10px;
+            >a {
+                width: 100%;
+                border: 1px solid #ccc;
+                display: block;
+                height: 32px;
+                line-height: 32px;
+                text-align: center;
+                border-radius: 5px;
+            }
+        }
+    }
+}
+
+.com-content {
+    color: #000;
+    line-height: 22px;
+    padding-top: 5px;
+}
+
+// 商品列表
+#product {
+    > .category-title {
+        position: relative;
+        >.breadcrumb {
+            margin-bottom: 0px;
+            >li {
+                &::before {
+                    content: "";
+                }
+                &::after {
+                    content: ">";
+                }
+            }
+        }
+        >.btn-default {
+            position: absolute;
+            right: 10px;
+            top: 3px;
+            height: 30px;
+        }
+    }
+}
